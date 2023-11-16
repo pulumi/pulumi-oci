@@ -32,6 +32,11 @@ env:
   TF_VAR_tenancy_ocid: ${{ secrets.TF_VAR_tenancy_ocid }}
   TF_VAR_user_ocid: ${{ secrets.TF_VAR_user_ocid }}
   TRAVIS_OS_NAME: linux
+
+# This should cancel any previous runs of the same workflow on the same branch which are still running.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   build_sdk:
     if: github.event_name == 'repository_dispatch' ||
